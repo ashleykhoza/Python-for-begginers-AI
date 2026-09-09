@@ -1,0 +1,108 @@
+import { DiagnosticQuestion } from "../types/mentor";
+
+export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
+  {
+    id: "diag-1",
+    topic: "Variables & Data Types",
+    difficulty: "Beginner",
+    question: "What will `type(3 / 2)` evaluate to in Python 3?",
+    options: [
+      { text: "<class 'int'>", correct: false },
+      { text: "<class 'float'>", correct: true },
+      { text: "<class 'double'>", correct: false },
+      { text: "<class 'rational'>", correct: false },
+    ],
+    explanation: "In Python 3, single slash division `/` always performs true division and produces a `float` (1.5). Floor division uses `//`.",
+  },
+  {
+    id: "diag-2",
+    topic: "Conditions & Boolean Logic",
+    difficulty: "Beginner",
+    question: "What is the boolean evaluation of `bool([])` and `bool('False')`?",
+    options: [
+      { text: "False and True", correct: true },
+      { text: "False and False", correct: false },
+      { text: "True and True", correct: false },
+      { text: "True and False", correct: false },
+    ],
+    explanation: "An empty collection `[]` is falsy (`False`), whereas any non-empty string like `'False'` is truthy (`True`).",
+  },
+  {
+    id: "diag-3",
+    topic: "Loops & Sequences",
+    difficulty: "Beginner",
+    question: "How many times does `for i in range(2, 8, 2):` execute?",
+    options: [
+      { text: "3 times (values 2, 4, 6)", correct: true },
+      { text: "4 times (values 2, 4, 6, 8)", correct: false },
+      { text: "6 times", correct: false },
+      { text: "2 times", correct: false },
+    ],
+    explanation: "The stop value 8 is exclusive. The sequence is 2, 4, 6 (3 iterations).",
+  },
+  {
+    id: "diag-4",
+    topic: "Lists & Mutability",
+    difficulty: "Intermediate",
+    question: "What is the output of:\n`a = [1, 2]\nb = a\nb += [3]\nprint(a)`?",
+    options: [
+      { text: "[1, 2]", correct: false },
+      { text: "[1, 2, 3]", correct: true },
+      { text: "[3]", correct: false },
+      { text: "TypeError", correct: false },
+    ],
+    explanation: "For mutable lists, `+=` calls `.extend()` in-place on the same object referenced by both `a` and `b`.",
+  },
+  {
+    id: "diag-5",
+    topic: "Functions & Scope",
+    difficulty: "Intermediate",
+    question: "What happens when a function executes without an explicit `return` statement?",
+    options: [
+      { text: "It returns 0", correct: false },
+      { text: "It raises a NoReturnError", correct: false },
+      { text: "It returns None implicitly", correct: true },
+      { text: "It returns an empty string", correct: false },
+    ],
+    explanation: "In Python, any function reaching the end of its body without returning explicitly returns `None`.",
+  },
+  {
+    id: "diag-6",
+    topic: "Dictionaries & Hash Maps",
+    difficulty: "Intermediate",
+    question: "Which of the following can NOT be used as a dictionary key in Python?",
+    options: [
+      { text: "A tuple of numbers `(1, 2)`", correct: false },
+      { text: "A string `'user_id'`", correct: false },
+      { text: "A list `[1, 2]`", correct: true },
+      { text: "An integer `42`", correct: false },
+    ],
+    explanation: "Dictionary keys must be hashable and immutable. Lists are mutable and unhashable, raising `TypeError: unhashable type: 'list'`.",
+  },
+  {
+    id: "diag-7",
+    topic: "Error Handling & Debugging",
+    difficulty: "Intermediate",
+    question: "Which block will ALWAYS execute in a Python try-except-else-finally structure, regardless of whether an exception occurred?",
+    options: [
+      { text: "else", correct: false },
+      { text: "finally", correct: true },
+      { text: "except", correct: false },
+      { text: "try", correct: false },
+    ],
+    explanation: "The `finally` block is guaranteed to run cleanup logic whether an error occurred, was caught, or was re-raised.",
+  },
+  {
+    id: "diag-8",
+    topic: "Predicting Output & Logic",
+    difficulty: "Advanced",
+    question: "What does this comprehension evaluate to?\n`[x for x in range(5) if x % 2 == 1]`",
+    options: [
+      { text: "[1, 3]", correct: true },
+      { text: "[0, 2, 4]", correct: false },
+      { text: "[1, 3, 5]", correct: false },
+      { text: "[2, 4]", correct: false },
+    ],
+    explanation: "The range(5) generates 0, 1, 2, 3, 4. Filtering for odd numbers (`x % 2 == 1`) leaves `[1, 3]`.",
+  },
+];

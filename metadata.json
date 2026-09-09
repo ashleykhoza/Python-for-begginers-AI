@@ -1,0 +1,6 @@
+{
+  "name": "Python Mentor",
+  "description": "An intelligent, interactive Socratic Python teacher and adaptive coding studio powered by Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
